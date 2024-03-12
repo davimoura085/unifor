@@ -4,8 +4,8 @@ flowchart TD
 A([INICIO])  --> B{{Digite um número:}}
 B --> C[/número/]
 C --> D{número > 0}
-D --NÃO--> E{{O número deve ser positivo!}}
-E --> J
+D --> E{{O número deve ser positivo}}
+E --> B
 D--SIM-->F[Resto é igual a número % 2]
 F --> G{resto == 0}
 G --NÃO--> H{{O número é ímpar!}}
@@ -27,6 +27,6 @@ SE número > 0 ENTÃO
   SENÃO
     ESCREVA "O número é ímpar!"
 SENÃO
-    ESCREVA "O número deve ser positivo!"
 FIM_ALGORITMO
 ```
+
