@@ -29,6 +29,39 @@ G-->H[1 = 0]
 H-->I{{"1=", 0}}
 I -->J{{"0=", 1}}
 ```
+ALGORITMO verifica_par_impar
+DECLARE numero, resto: INTEIRO
+
+INICIO
+    // Solicita ao usuário que digite um número
+    ESCREVA "Digite um número: "
+    
+    // Lê o número fornecido pelo usuário
+    LEIA numero
+    
+    // Verifica se o número é maior ou igual a zero
+    SE numero >= 0 ENTAO
+
+        // Calcula o resto da divisão por 2 para determinar se é par ou ímpar
+        resto <- numero % 2
+
+        // Verifica se o resto da divisão é igual a zero, indicando que o número é par
+        SE resto == 0 ENTAO
+            ESCREVA "O número é par!"
+
+        // Se o resto da divisão não for zero, o número é ímpar
+        SENAO
+            ESCREVA "O número é ímpar!"
+
+        FIM_SE
+
+    // Se o número não for positivo, exibe uma mensagem de erro
+    SENAO             
+        ESCREVA "O número deve ser positivo!"
+
+    FIM_SE
+
+FIM
 
 
 ### Questão 2 - Contagem
