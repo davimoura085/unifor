@@ -8,8 +8,8 @@
 **Aluno(a):** Davi de Moura Pinheiro <br>
 **Matrícula:** 2413105 <br>
 
-**1a chamada (Sim/Não):** Sim <br>
-**2a chamada (Sim/Não):** Não
+**1a chamada (Sim/Não):** Não <br>
+**2a chamada (Sim/Não):** Sim
 
 ## Questão 01 - Troca dos valores de duas variáveis (1 ponto)
 
