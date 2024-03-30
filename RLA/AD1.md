@@ -15,20 +15,6 @@
 
 Dadas duas variáveis, $a$ e $b$, implemente e teste um algoritmo para trocar os valores atribuídos a elas.
 
-#### Fluxograma:
-
-```mermaid
-flowchart TD
-A([INICIO]) --> B{{Digite o valor de a:}}
-B --> C[/0/]
-C -->D{{Digite o valor de b:}}
-D -->E[/1/]
-E --> F[0 = 0]
-F-->G[0 = 1]
-G-->H[1 = 0]
-H-->I{{"1=", 0}}
-I -->J{{"0=", 1}}
-```
 
 ## Pseudocódigo
 
@@ -75,41 +61,6 @@ FIM
 ### Questão 2 - Contagem
 Dado um conjunto $n$ de notas de alunos em um exame, implemente e teste um algoritmo para fazer uma contagem $cont$ do número de alunos que foram aprovados no exame. Será considerado aprovado o aluno que tirar $nota$ 50 ou maior (no intervalo de 0 a 100).
 
-#### Fluxograma: 
-
-```mermaid
-
-flowchart TD
-
-A([INICIO]) --> B{{Digite o número de alunos: }}
-
-B --> C[\30\]
-
-C --> D[\cont = 0\]
-
-D --> E[\i = 1\]
-
-E --> F{i <= 30}
-
-F --FALSE--> W{{Número de alunos aprovados: 18}}
-
-W --> Z([FIM])
-
-F --TRUE--> G{{Digite a nota do aluno, i}}
-
-G --> H[\nota\]
-
-H --> I{"nota >= 50 <br>E <br>nota <=100"}
-
-I --TRUE--> J[\cont =+ 1\]
-
-I --FALSE--> K[\i =+ 1\]
-
-J --> K
-
-K --LOOP--> F
-
-```
 
 ## Pseudocódigo
 
@@ -156,44 +107,6 @@ FIM
 Dado um conjunto de $n$ números, implemente e teste um algoritmo para calcular a soma desses números. <br>
 Aceite apenas $n$ maior ou igual a zero.
 
-#### Fluxograma:
-
-```mermaid
-
-flowchart TD
-
-A([INICIO]) --> B([FIM])
-
-A([INICIO]) --> B{{"Digite a quantidade de números<br> (n >= 0):"}}
-
-B --> C[\n\]
-
-C --> D{n >= 0}
-
-D --FALSE-->N{{"O valor deve ser maior ou igual a zero!"}}
-
-N --> M([FIM])
-
-D --TRUE--> E[/soma = 0/]
-
-E --> F[i = 1]
-
-F --> G{i <= n}
-
-G --FALSE--> L{{"A soma dos numeros é, 5"}}
-
-L --> M
-
-G --TRUE--> H{{Digite um número: }}
-
-H --> I[\5\]
-
-I --> J[0+5= 5]
-
-J --> K[i =+ 1]
-
-K --LOOP--> G
-```
 
 ## Pseudocódigo
 
@@ -245,36 +158,6 @@ FIM
 
 Dado um conjunto de $n$ termos da série, implemente e teste um algoritmo para calcular o valor de S, conforme definido abaixo:
 
-#### Fluxograma
-
-```mermaid
-
-flowchart TD
-
-A([INICIO]) --> B([FIM])
-
-A([INICIO]) --> B{{Digite o número de termos da série S: }}
-
-B --> C[/4/]
-
-C --> D[S = 0]
-
-D --> E[[i=3 ATE n PASSO 1]]
-
-E --i > n--> J{{"Soma da série S é ", 2.96}}
-
-J --> K([FIM])
-
-E --"i=0,1,2,..,n"--> F[numerador = 2 * 3 + 1= 1]
-
-F --> G[denominador = 2 * 3 + 2= 2]
-
-G --> H[termo = 7/8]
-
-H --> I[S += termo]
-
-I --LOOP--> E
-```
 
 ## Pseudocódigo
 
@@ -319,36 +202,6 @@ FIM
 
 Dado um número n, implemente e teste um algoritmo para calcular o fatorial de n (escrito como n!), onde n>=0.
 
-#### Fluxograma
-
-```mermaid
-
-flowchart TD
-
-A([INICIO]) --> B([FIM])
-
-A([INICIO]) --> B{{"Digite um numero inteiro nao-negativo:"}}
-
-B --> C[/n/]
-
-C --> D{3 >= 0}
-
-D --TRUE--> E[fator = 1]
-
-D --FALSE--> J{{O valor deve ser maior ou igual a zero!}}
-
-J --> I([FIM])
-
-E --> F[[i=1 ATÉ n PASSO 1]]
-
-F --"i > n"--> H{{O fatorial de, n, é:, 1}}
-
-F --"i=1,2,..n"--> G[fator = 1 * 1= 1]
-
-G --LOOP--> F
-
-H --> I
-```
 
 ## Pseudocódigo
 
@@ -391,34 +244,6 @@ FIM
 
 Gerar e imprimir os n primeiros termos da sequência de Fibonacci, onde n>=1. Os primeiros termos são: 0,1,1,2,3,5,8,13,... Cada termo, além dos dois primeiros, é derivado da soma dos seus dois antecessores mais próximos.
 
-#### Fluxograma
-
-```mermaid
-
-flowchart TD
-
-A([INICIO]) --> B([FIM])
-
-A([INICIO]) --> B{{"Número de termos da série Fibonacci:"}}
-
-B --> C[a = 2]
-
-C --> D[b = 3]
-
-D --> E[[i=4 ATÉ n PASSO 1]]
-
-E --"i > 5"--> J([FIM])
-
-E --"i=1,2,...,5"--> F{{2}}
-
-F --> G[2+3= 5 = a+b]  
-
-G --> H[3]
-
-H --> I[5 = termo_atual]
-
-I --LOOP--> E
-```
 
 ## Pseudocódigo
 
@@ -458,40 +283,6 @@ FIM
 
 Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número inteiro positivo.
 
-#### Fluxograma
-
-```mermaid
-
-flowchart TD
-
-A([INICIO]) --> B([FIM])
-
-A([INICIO]) --> B{{Digite um número inteiro: }}
-
-B --> C[\num\]
-
-C --> D{num >= 4}
-
-D --TRUE--> G[num_inv = 2]
-
-G --> H{4 > 0}
-
-H --FALSE--> Z{{"Número invertido:", numero_inv}}
-
-Z --> W([FIM])
-
-H --TRUE--> I[digito = num % 10]
-
-I --> J[2 = num_inv * 10 + digito]
-
-J --> K[numero = numero // 10]
-
-K --LOOP--> H
-
-D --FALSE--> E{{O número deve ser positivo!}}
-
-E --> W
-```
 
 ## Pseudocódigo
 
