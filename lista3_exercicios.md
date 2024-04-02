@@ -9,7 +9,6 @@ Atualize o algoritmo para determinar se um número inteiro e positivo é par ou 
 
 ```mermaid
 flowchart TD
-title Verificar se um número é par ou ímpar
 
 A([INICIO]) --> B{{Digite um número:}}
 B --> C[\num\]
