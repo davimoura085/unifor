@@ -76,8 +76,6 @@ Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas 
 
 ```mermaid
 flowchart TD
-title Iteração com Loop
-desc Este fluxograma demonstra um loop que conta de 0 até n-1 com incremento de 3.
 
 A([INICIO]) --> B{{Digite a quantidade de números:}}
 B --> C[\n\]
@@ -130,8 +128,6 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 
 ```mermaid
 flowchart TD
-title Soma de Números
-desc Este fluxograma calcula a soma de n números inseridos pelo usuário.
 
 A([INICIO]) --> B{{Digite a quantidade de números:}}
 B --> C[\n\]
@@ -151,8 +147,6 @@ K --LOOP--> F
 
 ```mermaid
 flowchart TD
-title Soma de Números
-desc Este fluxograma calcula a soma de n números inseridos pelo usuário.
 
 A([INICIO]) --> B{{Digite a quantidade de números:}}
 B --> C[\n\]
@@ -230,8 +224,6 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-title Cálculo da Média de Notas
-desc Este fluxograma calcula a média aritmética das notas dos alunos.
 
 A([INICIO]) --> B[/soma/]
 B --> C[/cont/]
