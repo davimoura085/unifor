@@ -73,7 +73,7 @@ INICIO
     ESCREVA "Novo valor de b: ", b
 
 FIM
-```
+
 #### Tabela de testes
 
 | a  | b  | aux | a  | b  | saída 1 | saída 2 | 
@@ -173,7 +173,7 @@ INICIO
     ESCREVA "O número de alunos aprovados é: ", cont
 
 FIM
-```
+``
 
 #### Tabela de testes 01
 Tabela de testes referente ao algoritmo usando o loop ENQUANTO.
@@ -362,7 +362,7 @@ INICIO
     ESCREVA "A soma da série S é ", S
 
 FIM
-```
+``
 
 #### Tabela de testes (0.25 ponto)
 
@@ -481,7 +481,7 @@ INICIO
     FIM_PARA
 
 FIM
-```
+``
 
 #### Tabela de testes
 
@@ -492,7 +492,7 @@ FIM
 | 3  | 5  | 1  | 2  | 3  | 1     | 1 + 2 = 3           | 2     | 3               |
 | 4  | 5  | 2  | 3  | 4  | 2     | 2 + 3 = 5           | 3     | 5               |
 | 4  | 5  | 3  | 5  | 5  | 3     | 3 + 5 = 8           | 5     | 8               |
-```
+``
 
 
 
@@ -571,7 +571,7 @@ INICIO
     FIM_SE
 
 FIM
-```
+``
 
 #### Tabela de testes
 
