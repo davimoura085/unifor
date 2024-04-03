@@ -15,6 +15,28 @@
 
 Dadas duas variáveis, $a$ e $b$, implemente e teste um algoritmo para trocar os valores atribuídos a elas.
 
+#### Descrição geral do algoritmo
+
+1. Guardar o valor original da variável $a$ em uma variável auxiliar $aux$;
+2. Atribuir à variável $a$ o valor original da variável $b$;
+3. Atribuir à variável $b$ o valor original da variável $a$, que está armazenado na variável auxiliar $aux$.
+4. Exibir os novos valores de $a$ e $b$.
+
+#### Fluxograma
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{"Digite o valor da a:"}}
+B --> C[\a\]
+C --> D{{"Digite o valor da b:"}}
+D --> E[\b\]
+E --> F[aux = a]
+F --> G[a = b]
+G --> H[b = aux]
+H --> I{{"a =", a}}
+I --> J{{"b =", b}}
+```
+
 
 ## Pseudocódigo
 
@@ -51,15 +73,65 @@ INICIO
     ESCREVA "Novo valor de b: ", b
 
 FIM
+```
+#### Tabela de testes
 
-
-
-
-
-
+| a  | b  | aux | a  | b  | saída 1 | saída 2 | 
+| -- | -- | --  | -- | -- | --      | --      | 
+| 0  | 1  | 0   | 1  | 0  | a = 1   | b = 0   |
 
 ### Questão 2 - Contagem
 Dado um conjunto $n$ de notas de alunos em um exame, implemente e teste um algoritmo para fazer uma contagem $cont$ do número de alunos que foram aprovados no exame. Será considerado aprovado o aluno que tirar $nota$ 50 ou maior (no intervalo de 0 a 100).
+
+#### Descrição geral do algoritmo
+
+1. Obter o número de notas $n$ a serem processadas;
+2. Inicializar a contagem $cont$ com zero;
+3. Enquanto houver notas a serem processadas, fazer repetidamente:
+    - obter a próxima nota;
+    - se a nota for suficiente para passar no exame ($n ≥ 50$) então adicionar 1 (um) à contagem $cont$;
+4. Exibir a contagem $cont$ (número total de aprovações).
+
+#### Fluxograma 01
+Fluxograma conforme descrição do algoritmo acima, usando o loop ENQUANTO.
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite o número de alunos: }}
+B --> C[\n\]
+C --> D[\cont = 0\]
+D --> E[\i = 1\]
+E --> F{i <= n}
+F --FALSE--> W{{Número de alunos aprovados: cont}}
+W --> Z([FIM])
+F --TRUE--> G{{Digite a nota do aluno, i}}
+G --> H[\nota\]
+H --> I{"nota >= 50 <br>E <br>nota <=100"}
+I --TRUE--> J[\cont =+ 1\]
+I --FALSE--> K[\i =+ 1\]
+J --> K
+K --LOOP--> F
+```
+
+#### Fluxograma 02
+Fluxograma opcional usando o loop PARA.
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite o número de notas: }}
+B --> C[\n\]
+C --> D[\cont = 0\]
+D --> E[[i=1 ATE n PASSO 1]]
+E --"i=1,2...,n"--> F{{Digite nota, i}}
+E --"i > n"--> K{{Número de alunos aprovados: , cont}}
+K --> L([FIM])
+F --> G[\nota\]
+G --> H{"nota >= 50 <br>E <br>nota <=100"}
+H --FALSE/LOOP--> E
+H --TRUE--> J[\cont =+ 1\]
+J --LOOP--> E
+```
+
 
 
 ## Pseudocódigo
@@ -101,11 +173,65 @@ INICIO
     ESCREVA "O número de alunos aprovados é: ", cont
 
 FIM
+```
+
+#### Tabela de testes 01
+Tabela de testes referente ao algoritmo usando o loop ENQUANTO.
+
+| it | n  | i  | cont | i<=n  | nota, i | nota | nota_valida | cont+1 | i+1 | saída        | 
+| -- | -- | -- | --   | --    | --      | --   | --          | --     | --  | --           |
+| 1  | 3  | 1  |  0   | True  | nota 1  | 60   | True        | 1      | 2   |              |
+| 2  | 3  | 2  |  1   | True  | nota 2  | 40   | False       | 1      | 3   |              |
+| 3  | 3  | 3  |  1   | True  | nota 3  | 90   | True        | 2      | 4   |              |
+| 4  | 3  | 4  |  2   | False |         |      |             |        |     | Aprovados: 2 |
+
+#### Tabela de testes 02
+Tabela de testes referente ao algoritmo usando o loop PARA.
+
+| it | n  | cont | i  | nota, i | nota | nota_valida | cont+1 | saída        | 
+| -- | -- | --   | -- | --      | --   | --          | --     | --           |
+| 1  | 3  | 0    | 1  | nota 1  | 60   | True        | 1      |              |
+| 2  | 3  | 1    | 2  | nota 2  | 40   | False       | 1      |              |
+| 3  | 3  | 1    | 3  | nota 3  | 90   | True        | 2      | Aprovados: 2 |
 
 #### Questão 3 - Soma de um conjunto de números
 
 Dado um conjunto de $n$ números, implemente e teste um algoritmo para calcular a soma desses números. <br>
 Aceite apenas $n$ maior ou igual a zero.
+
+Dado um conjunto de $n$ números, implemente e teste um algoritmo para calcular a soma desses números. <br>
+Aceite apenas $n$ maior ou igual a zero.
+
+#### Descrição geral do algoritmo
+
+1. Obter a quantidade de números $n$ a serem somados.
+2. Inicializar a variável $soma$ com 0 (zero).
+3. Enquanto menos do que $n$ números tiverem sido somados, fazer repetidamente:
+    - obter o próximo número $i$;
+    - calcular a soma atual, adicionando o número $i$ obtido à soma mais recente;
+4. Exibir a soma dos $n$ números
+
+#### Fluxograma
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{"Digite a quantidade de números<br> (n >= 0):"}}
+B --> C[\n\]
+C --> D{n >= 0}
+D --FALSE-->N{{"O valor deve ser maior ou igual a zero!"}}
+N --> M([FIM])
+D --TRUE--> E[/soma = 0/]
+E --> F[i = 1]
+F --> G{i <= n}
+G --FALSE--> L{{"A soma dos numeros é , soma"}}
+L --> M
+G --TRUE--> H{{Digite um número: }}
+H --> I[\num\]
+I --> J[soma =+ num]
+J --> K[i =+ 1]
+K --LOOP--> G
+```
+
 
 
 ## Pseudocódigo
@@ -154,9 +280,48 @@ INICIO
 
 FIM
 
+#### Tabela de testes
+
+| it | n  | n >= 0 | soma | i  | i <= n | num | soma =+ num  | saída                   |
+| -- | -- | --     | --   | -- | --     | --  | --           | --                      |
+|    | -3 | False  |      |    |        |     |              | O valor deve ser ...    |
+| 1  | 0  | True   | 0    | 1  | False  |     |              | A soma dos números é 0  |
+| 1  | 3  | True   | 0    | 1  | True   | 5   | 0 + 5 = 5    |                         |
+| 2  | 3  | True   | 5    | 2  | True   | 10  | 5 + 10 = 15  |                         |
+| 3  | 3  | True   | 15   | 3  | True   | 20  | 15 + 20 = 35 |                         |
+| 4  | 3  | True   | 35   | 4  | False  |     |              | A soma dos números é 35 |
+
 ## Questão 04 - Cálculo de uma série (1 ponto)
 
 Dado um conjunto de $n$ termos da série, implemente e teste um algoritmo para calcular o valor de S, conforme definido abaixo:
+
+#### Descrição geral do algoritmo
+
+1. Obter o número de termos $n$;
+2. Inicializar a variável $S$ com 0 (zero).
+3. Iterar o valor de $n$ na variável $i$ iniciando com 0 (zero), de acordo com as instruções abaixo:
+    - calcular o numerador na variável $numerador$;
+    - calcular o denominador  na variável $denominador$;;
+    - calcular o termo da série na variável $termo$, onde $termo = numerador/denominador$;
+    - adicionar esse termo à variável $S$.
+4. Exibir o valor da série $S$.
+
+#### Fluxograma
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{"Digite o número de termos da série S:"}}
+B --> C[/n/]
+C --> D[S = 0]
+D --> E[[i=0 ATE n-1 PASSO 1]]
+E --"i > n-1"--> J{{"Soma da série S é ", S}}
+J --> K([FIM])
+E --"i=0,1,2,..,n-1"--> F[numerador = 2 * i + 1]
+F --> G[denominador = 2 * i + 2]
+G --> H[termo = numerador / denominador]
+H --> I[S += termo]
+I --LOOP--> E
+```
 
 
 ## Pseudocódigo
@@ -197,6 +362,17 @@ INICIO
     ESCREVA "A soma da série S é ", S
 
 FIM
+```
+
+#### Tabela de testes (0.25 ponto)
+
+| it | n  | S  | i | numerador | denominador | termo | S += termo     | saída                  |
+| -- | -- | -- |-- | --        | --          | --    | --             | --                     |
+|    | 0  | 0  |   |           |             |       |                |                        |
+| 1  | 4  | 0  | 0 | 2*0+1 = 1 | 2*0+2 = 2   | 1/2   | 0+1/2 = 1/2    |                        |
+| 2  | 4  | 0  | 1 | 2*1+1 = 1 | 2*1+2 = 2   | 3/4   | 1/2+3/4 = 1.25 |                        |
+| 3  | 4  | 0  | 2 | 2*2+1 = 1 | 2*2+2 = 2   | 5/6   | 0+1/2 = 2.08   |                        |
+| 4  | 4  | 0  | 3 | 2*3+1 = 1 | 2*3+2 = 2   | 7/8   | 0+1/2 = 2.96   | Soma da série S é 2.96 |
 
 ## Questão 5 - Cálculo Fatorial (2 pontos)
 
@@ -244,6 +420,33 @@ FIM
 
 Gerar e imprimir os n primeiros termos da sequência de Fibonacci, onde n>=1. Os primeiros termos são: 0,1,1,2,3,5,8,13,... Cada termo, além dos dois primeiros, é derivado da soma dos seus dois antecessores mais próximos.
 
+#### Descrição geral do algoritmo
+
+1. Obter o número de termos $n$, onde $n \geq 1$;
+2. Inicializar os dois primeiros termos da série nas variável $a$ e $b$ com 0 (zero);
+3. Iterar o valor de $n$, ou seja, executar $n$ vezes, as instruções abaixo:
+    - Imprimir o termo inicial $a$ (instrução para exibir a sequência ao atualizar a variável $a$);
+    - Somar os termos $a$ e $b$ na variável $termo_atual$;
+    - Atribuir a variável $a$ o valor da variável $b$;
+    - Atribuir a variável $b$ o valor da variável $termo_atual$.
+
+#### Fluxograma
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{"Número de termos da série Fibonacci:"}}
+B --> C[/n/]
+C --> D[a = 0]
+D --> E[b = 1]
+E --> F[[i=1 ATÉ n PASSO 1]]
+F --"i > n"--> K([FIM])
+F --"i=1,2,...,n"--> G{{a}}
+G --> H[termo_atual = a + b]
+H --> I[a = b]
+I --> J[b = termo_atual]
+J --LOOP--> F 
+```
+
 
 ## Pseudocódigo
 
@@ -278,10 +481,53 @@ INICIO
     FIM_PARA
 
 FIM
+```
+
+#### Tabela de testes
+
+| it | n  | a  | b  | i  | saída | termo_atual = a + b | a = b | b = termo_atual |
+| -- | -- | -- | -- | -- | --    | --                  | --    | --              |
+| 1  | 5  | 0  | 1  | 1  | 0     | 0 + 1 = 1           | 1     | 1               |
+| 2  | 5  | 1  | 1  | 2  | 1     | 1 + 1 = 2           | 1     | 2               |
+| 3  | 5  | 1  | 2  | 3  | 1     | 1 + 2 = 3           | 2     | 3               |
+| 4  | 5  | 2  | 3  | 4  | 2     | 2 + 3 = 5           | 3     | 5               |
+| 4  | 5  | 3  | 5  | 5  | 3     | 3 + 5 = 8           | 5     | 8               |
+```
+
+
 
 ## Questão 7 - Inversão dos dígitos de um número inteiro (2 pontos)
 
 Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número inteiro positivo.
+
+#### Descrição geral do algoritmo
+
+1. Obter o número inteiro positivo $num$ a ser invertido;
+2. Inicializar a variável $num \textunderscore inv$ com 0 (zero);
+3. Enquanto o número for maior que zero ($num > 0$), faça repetidamente:
+    - Calcular o último dígito do número na variável $digito$;
+    - Adicionar o dígito ao número invertido $num \textunderscore inv$;
+    - Remover o último dígito do número original $num$; 
+4. Exibir o número invertido.
+
+#### Fluxograma
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite um número inteiro: }}
+B --> C[\num\]
+C --> D{num >= 0}
+D --TRUE--> G[num_inv = 0]
+G --> H{num > 0}
+H --FALSE--> Z{{"Número invertido:", numero_inv}}
+Z --> W([FIM])
+H --TRUE--> I[digito = num % 10]
+I --> J[num_inv = num_inv * 10 + digito]
+J --> K[num = num // 10]
+K --LOOP--> H
+D --FALSE--> E{{O número deve ser positivo!}}
+E --> W
+```
 
 
 ## Pseudocódigo
@@ -325,6 +571,17 @@ INICIO
     FIM_SE
 
 FIM
+```
+
+#### Tabela de testes
+
+| it | num | num_inv | num > 0 | digito | num = num // 10 | num_inv = (num_inv * 10) + digito | Saída                        |
+| -- | --  | --      | --     | --      | --              | --                                | --                           |
+|    | -1  | 0       | False  |         |                 |                                   | O número deve ser positivo!  |
+| 1  | 0   | 0       | False  |         |                 |                                   | Número invertido:: 0         |
+| 1  | 42  | 0       | True   | 2       | 4               | 2                                 |                              |
+| 2  | 4   | 2       | True   | 4       | 0               | 24                                |                              |
+| 3  | 0   | 24      | False  |         |                 |                                   | Número invertido:: 24        |
 
 
 
